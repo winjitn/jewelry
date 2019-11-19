@@ -4,7 +4,6 @@ import "./NavBar.css";
 const headings = [
   { Heading: "Jewelry", List: [] },
   { Heading: "About Us", List: [] },
-  { Heading: "Events", List: [] },
   { Heading: "Contact Us", List: [] }
 ];
 
