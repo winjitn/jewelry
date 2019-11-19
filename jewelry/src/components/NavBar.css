@@ -1,0 +1,31 @@
+.nav {
+  height: 60px;
+  padding: 20px;
+  padding-top: 18px;
+  border-top: solid 4px rgb(92, 218, 197);
+}
+
+.ctn {
+  padding: 0 30px;
+  text-decoration: none;
+}
+
+.item:hover {
+  color: black;
+  padding: 2px 0;
+  border-bottom: solid 3px rgb(11, 245, 225);
+  cursor: pointer;
+}
+
+.nav-list {
+  margin-left: 40px;
+  color: grey;
+}
+
+.logo {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 30px;
+  margin-left: 40px;
+  cursor: pointer;
+}
