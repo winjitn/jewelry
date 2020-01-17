@@ -1,0 +1,17 @@
+.about {
+  font-size: 40px;
+  color: #3a3532;
+  border-bottom: solid #3a3532 1px;
+  width: 16%;
+}
+
+.subhead {
+  color: #3a3532;
+  font-size: 20px;
+}
+
+.body {
+  color: #3a3532;
+  font-size: 15px;
+  margin-top: 20px;
+}

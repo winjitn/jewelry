@@ -1,0 +1,51 @@
+.main {
+  padding-top: 100px;
+  margin-left: 50px;
+  margin-right: 400px;
+  padding-bottom: 400px;
+}
+
+.subhead {
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.cart {
+  position: fixed;
+  top: 200px;
+  right: 100px;
+  width: 200px;
+  height: 300px;
+  border: solid 2px rgb(228, 228, 228);
+  border-radius: 10px;
+}
+
+.cartbody {
+  padding: 20px;
+}
+
+.cartbodytext {
+  height: 60%;
+  overflow: auto;
+  padding: 0 20px;
+}
+
+.cartbutton {
+  position: absolute;
+  width: 50%;
+  bottom: 0;
+}
+
+.imgcard {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+#imgctn {
+  position: relative;
+  padding: 1.5px;
+}

@@ -3,38 +3,38 @@ import "./Footer.css";
 
 export const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer ash" style={{ position: "relative", zIndex: "1" }}>
       <div className="ui container">
         <div className="ui grid">
           <div className="eight wide column">
             <h2 className="ui header">
               <i className="location arrow icon" />
-              <div className="content">Headquarters</div>
+              <div className="content lighter">Placeholder</div>
             </h2>
-            <h3>Benson Jewelry Building</h3>
-            <h4>
-              311/2-8 Surawong Road, Suriyawong, Bangrak, Bangkok 10500,
-              Thailand
+            <h3 className="lighter">Placeholder Placeholder Placeholder</h3>
+            <h4 className="lighter">
+              111/1-1 Placeholder Road, Placeholder, Placeholder, Placeholder
+              10000, Placeholder
             </h4>
-            <h4>
+            <h4 className="lighter">
               <i className="phone icon" />
-              Tel: +662-635-7500 <i className="envelope icon" />
-              Email: sales@bensonjewelry.com
+              Tel: +000-000-0000 <i className="envelope icon" />
+              Email: Placeholder@email.com
             </h4>
           </div>
           <div className="eight wide column">
             <h2 className="ui header">
               <i className="building icon" />
-              <div className="content">Manufacturing Center</div>
+              <div className="content lighter">Placeholder</div>
             </h2>
-            <h3>Benson Jewelry Co. Ltd.</h3>
-            <h4>
-              18, 18/9 Moo 8, Soi Tessaban 2, Phetkasem Road, Omyai, Sampran
-              Nakornpathom, 73160 Thailand
+            <h3 className="lighter">Placeholder Placeholder</h3>
+            <h4 className="lighter">
+              11, 1111 Moo 1, Soi Placeholder 1, Placeholder Road, Placeholder,
+              Placeholder Placeholder, 10000 Placeholder
             </h4>
-            <h4>
+            <h4 className="lighter">
               <i className="phone icon" />
-              Tel: +662-813-5577
+              Tel: +000-000-0000
             </h4>
           </div>
         </div>
