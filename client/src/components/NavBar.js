@@ -76,14 +76,16 @@ const NavBar = props => {
   ));
   return (
     <nav id="nav" className="nav-scroll nav">
-      <div className="nav-child">
-        <Link to="/" className="logo">
-          Company Company
-        </Link>
-        <span className="nav-list" style={{ color: "white" }}>
-          {rendered}
-          {renderLogin(props)}
-        </span>
+      <div className="ui container">
+        <div className="nav-child">
+          <Link to="/" className="logo">
+            Company Company
+          </Link>
+          <span className="nav-list" style={{ color: "white" }}>
+            {rendered}
+            {renderLogin(props)}
+          </span>
+        </div>
       </div>
     </nav>
   );
