@@ -1,10 +1,207 @@
-.home-ctn {
-  height: 100vh;
+* {
+  font-family: Raleway, sans-serif;
 }
 
 .banner {
   object-fit: cover;
   width: 100%;
   height: 600px;
-  margin-bottom: 60px;
+}
+
+.body1-ctn {
+  margin: 140px auto 60px auto;
+}
+
+.text1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.text2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  line-height: 100%;
+}
+
+.ui.grid > .column:not(.row) {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+.ui.grid > .column:not(.row),
+.ui.grid > .row > .column {
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+
+.body1-inner-ctn {
+  margin-bottom: 50px;
+}
+
+.body-inner-ctn-wrapper {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .body1-inner-ctn {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .ui.column.grid > [class*="five wide"].column,
+  .ui.grid > .column.row > [class*="five wide"].column,
+  .ui.grid > .row > [class*="five wide"].column,
+  .ui.grid > [class*="five wide"].column {
+    width: 50% !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .ui.column.grid > [class*="five wide"].column,
+  .ui.grid > .column.row > [class*="five wide"].column,
+  .ui.grid > .row > [class*="five wide"].column,
+  .ui.grid > [class*="five wide"].column {
+    width: 100% !important;
+  }
+}
+
+[item="bracelets"],
+[item="necklaces"],
+[item="bangles"],
+[item="rings"] {
+  position: relative;
+}
+
+[item="bracelets"]::after,
+[item="necklaces"]::after,
+[item="bangles"]::after,
+[item="rings"]::after {
+  display: block;
+  font-weight: 600;
+  font-size: 12px;
+
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[item="bracelets"]::after {
+  content: "BRACELETS";
+}
+[item="necklaces"]::after {
+  content: "NECKLACES";
+}
+[item="bangles"]::after {
+  content: "BANGLES";
+}
+[item="rings"]::after {
+  content: "RINGS";
+}
+
+.carousel {
+  margin-top: 150px;
+}
+.text-centered {
+  text-align: center;
+}
+
+/* DELETE LATER */
+.home-ctn {
+  height: 500vh;
+}
+
+.wheel {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wheel-item {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+.wheel-item > img {
+  width: 100%;
+}
+
+.wheel-nav {
+  width: 40px;
+  height: 300px;
+
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.wheel-btn {
+  height: 40px;
+  width: 40px;
+
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0px 8px 25px rgb(202, 202, 202);
+  cursor: pointer;
+}
+
+i.icon {
+  margin: 0 !important;
+  position: relative;
+}
+
+i.icon.chevron.right:before {
+  position: absolute;
+  left: 8px;
+}
+
+i.icon.chevron.left:before {
+  position: absolute;
+  left: 5px;
+}
+
+.wheel-item-label {
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.2s ease-out;
+}
+
+.l-active {
+  opacity: 1;
+}
+
+.wheel-img {
+  position: absolute;
+  transform: translateX(20%);
+  transition: 0.5s ease-out;
+  opacity: 0;
+}
+
+.w-disable {
+  transform: translateX(-20%);
+}
+
+.w-active {
+  transform: translateX(0%);
+  opacity: 1;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  .wheel-res {
+    display: none;
+  }
 }
