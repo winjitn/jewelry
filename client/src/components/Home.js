@@ -99,11 +99,11 @@ class Home extends React.Component {
             ? items[i].nextElementSibling
             : items[i].previousElementSibling;
 
-        await newItem.setAttribute("src", this.wheelArray[next].img);
         const next =
           (Number(items[i].getAttribute("current")) +
-            (e.classList.contains("left") ? 6 - displayN : displayN)) %
+            (side === "left" ? 6 - displayN : displayN)) %
           6;
+        await newItem.setAttribute("src", this.wheelArray[next].img);
         newLabel.innerHTML = this.wheelArray[next].tag;
         setTimeout(() => {
           newLabel.classList.add("letter-active");
