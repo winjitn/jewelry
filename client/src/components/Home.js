@@ -61,7 +61,7 @@ class Home extends React.Component {
   wheelFreeze = false;
   loadedObj = 0;
 
-  wheel(e) {
+  async wheel(e) {
     if (this.wheelFreeze === false) {
       this.wheelFreeze = true;
       const obj = this;
@@ -99,6 +99,7 @@ class Home extends React.Component {
             ? items[i].nextElementSibling
             : items[i].previousElementSibling;
 
+        await newItem.setAttribute("src", this.wheelArray[next].img);
         const next =
           (Number(items[i].getAttribute("current")) +
             (e.classList.contains("left") ? 6 - displayN : displayN)) %
@@ -108,7 +109,6 @@ class Home extends React.Component {
           newLabel.classList.add("letter-active");
         }, 500);
 
-        newItem.setAttribute("src", this.wheelArray[next].img);
         newItem.setAttribute("current", next);
 
         if (side === "left") newItem.classList.add("l-active");
