@@ -56,6 +56,10 @@
   .body1-inner-ctn {
     margin-top: 0;
   }
+
+  .body1-ctn {
+    margin: 60px auto 60px auto;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -67,14 +71,14 @@
   }
 }
 
-@media only screen and (max-width: 450px) {
+/* @media only screen and (max-width: 450px) {
   .ui.column.grid > [class*="five wide"].column,
   .ui.grid > .column.row > [class*="five wide"].column,
   .ui.grid > .row > [class*="five wide"].column,
   .ui.grid > [class*="five wide"].column {
     width: 100% !important;
   }
-}
+} */
 
 [item="bracelets"],
 [item="necklaces"],
