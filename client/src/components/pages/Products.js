@@ -8,10 +8,6 @@ class Products extends React.Component {
   state = { showReview: false };
   async componentDidMount() {
     await this.props.fetchRoom();
-    this.props.load(false);
-  }
-  componentWillUnmount() {
-    this.props.load(true);
   }
   renderContent() {
     if (this.state.showReview === true) {

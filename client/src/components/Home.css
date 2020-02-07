@@ -2,6 +2,12 @@
   font-family: Raleway, sans-serif;
 }
 
+.home-ctn {
+  overflow-x: hidden;
+  transition: 0.5s;
+  opacity: 0;
+}
+
 .banner {
   object-fit: cover;
   width: 100%;
@@ -111,11 +117,6 @@
   text-align: center;
 }
 
-/* DELETE LATER */
-.home-ctn {
-  height: 500vh;
-}
-
 .wheel {
   display: flex;
   justify-content: space-around;
@@ -179,7 +180,7 @@ i.icon.chevron.left:before {
   transition: 0.2s ease-out;
 }
 
-.l-active {
+.letter-active {
   opacity: 1;
 }
 
@@ -190,13 +191,21 @@ i.icon.chevron.left:before {
   opacity: 0;
 }
 
-.w-disable {
-  transform: translateX(-20%);
+.l-disable {
+  animation: ldisable ease-out 0.5s forwards;
 }
 
-.w-active {
-  transform: translateX(0%);
-  opacity: 1;
+.l-active {
+  animation: lactive ease-out 0.5s forwards;
+  z-index: 1;
+}
+
+.r-disable {
+  animation: rdisable ease-out 0.5s forwards;
+}
+
+.r-active {
+  animation: ractive ease-out 0.5s forwards;
   z-index: 1;
 }
 
@@ -204,4 +213,115 @@ i.icon.chevron.left:before {
   .wheel-res {
     display: none;
   }
+}
+
+@keyframes ldisable {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+}
+
+@keyframes lactive {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes rdisable {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+}
+
+@keyframes ractive {
+  0% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+button:focus {
+  outline-color: transparent;
+}
+
+.events-ctn {
+  margin: 150px 0;
+}
+
+.events-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.events-item {
+  height: 500px;
+  width: 350px;
+  padding: 10px;
+}
+
+.events-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.text3,
+.text4 {
+  font-weight: bold;
+}
+
+.text3 {
+  font-size: 26px;
+  line-height: 120%;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.text4 {
+  font-size: 16px;
+  line-height: 150%;
+  margin: 15px 0;
+}
+
+.centered {
+  height: 320px;
+  cursor: pointer;
+}
+
+.schedule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(129, 129, 129);
+  color: white;
+  margin: 0;
 }

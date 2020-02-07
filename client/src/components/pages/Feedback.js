@@ -3,12 +3,6 @@ import React from "react";
 import "./Feedback.css";
 
 class Feedback extends React.Component {
-  componentDidMount() {
-    this.props.load(false);
-  }
-  componentWillUnmount() {
-    this.props.load(true);
-  }
   render() {
     const { match } = this.props;
 

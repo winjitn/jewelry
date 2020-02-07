@@ -1,9 +1,6 @@
 .nav {
   width: 100%;
-  height: 60px;
-  padding: 20px;
-  padding-top: 18px;
-  border-top: solid 4px rgb(92, 218, 197);
+  border-top: solid 4px #24395b;
   position: fixed;
   top: 0;
   background-color: transparent;
@@ -12,11 +9,7 @@
 }
 
 .nav-colored {
-  background-color: rgb(54, 54, 54);
-}
-
-.nav-child-colored * {
-  color: white;
+  background-color: white;
 }
 
 .ctn {
@@ -25,8 +18,7 @@
 }
 
 .itemNav {
-  background: linear-gradient(0deg, rgb(84, 209, 188), rgb(84, 209, 188)) bottom
-    left no-repeat;
+  background: linear-gradient(0deg, #24395b, #24395b) bottom left no-repeat;
   background-size: 0px 3px;
   transition: 0.4s;
   text-decoration: none;
@@ -34,8 +26,7 @@
 }
 
 .active {
-  background: linear-gradient(0deg, rgb(84, 209, 188), rgb(84, 209, 188)) bottom
-    left no-repeat;
+  background: linear-gradient(0deg, #24395b, #24395b) bottom left no-repeat;
   background-size: 100% 3px;
   text-decoration: none;
   padding: 3px 0;
@@ -46,20 +37,102 @@
   cursor: pointer;
 }
 
-.nav-list {
-  margin-left: 40px;
-  color: grey;
-  float: right;
-}
-
 .logo {
   font-weight: lighter;
   font-size: 30px;
-  margin-left: 40px;
   cursor: pointer;
 }
 
 a,
 a:hover {
   color: black;
+}
+
+.nav-ctn {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.nav-burger {
+  display: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-list {
+    display: none;
+  }
+
+  .nav-burger {
+    display: inline-block;
+  }
+}
+
+#burger-1,
+#burger-2,
+#burger-3 {
+  width: 26px;
+  height: 4px;
+  margin: 5px 0;
+  background-color: black;
+  transition: 0.4s;
+}
+
+#burger-1 {
+  transform-origin: left;
+}
+#burger-3 {
+  transform-origin: left;
+}
+.b-active #burger-1 {
+  transform: rotate(45deg);
+}
+.b-active #burger-3 {
+  transform: rotate(-45deg);
+}
+.b-active #burger-2 {
+  opacity: 0;
+}
+
+#burger-dropdown {
+  width: 0;
+  height: 0;
+
+  position: absolute;
+  top: -75vh;
+  right: -60vh;
+  background-color: white;
+  z-index: -1;
+  transition: 0.8s ease-out;
+}
+
+.b-active #burger-dropdown {
+  width: 150vh;
+  height: 150vh;
+  border-radius: 50%;
+}
+
+#burger-menu {
+  position: absolute;
+  bottom: 30vh;
+  left: 50vh;
+  opacity: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-active #burger-menu {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#burger-menu .ctn {
+  padding: 30px;
+}
+
+#burger-menu .itemNav {
+  font-size: 25px;
 }

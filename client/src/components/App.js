@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Feedback from "./pages/Feedback";
 import * as actions from "../actions";
+import { Feed } from "semantic-ui-react";
 
 class App extends React.Component {
   state = { loading: true };
@@ -26,56 +27,16 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {this.state.loading === true ? (
-          <div className="load-ctn">
-            <div className="lds-ellipsis">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        ) : (
-          ""
-        )}
         <BrowserRouter>
           <NavBar persistor={this.props.persistor} load={this.loading} />
           <Switch>
-            <Route
-              exact
-              path="/"
-              render={props => <Home {...props} load={this.loading} />}
-            />
-            <Route
-              exact
-              path="/component/:type"
-              render={props => <Feedback {...props} load={this.loading} />}
-            />
-            <Route
-              exact
-              path="/login"
-              render={props => <Login {...props} load={this.loading} />}
-            />
-            <Route
-              exact
-              path="/about"
-              render={props => <About {...props} load={this.loading} />}
-            />
-            <Route
-              exact
-              path="/contact"
-              render={props => <Contact {...props} load={this.loading} />}
-            />
-            <Route
-              exact
-              path="/products"
-              render={props => <Products {...props} load={this.loading} />}
-            />
-            <Route
-              exact
-              path="/:type"
-              render={props => <Feedback {...props} load={this.loading} />}
-            />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/component/:type" component={Feedback} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/products" component={Products} />
+            <Route exact path="/:type" component={Feedback} />
           </Switch>
           <Footer />
         </BrowserRouter>

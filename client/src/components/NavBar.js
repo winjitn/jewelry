@@ -51,16 +51,28 @@ const renderLogin = props => {
 
 const navScroll = () => {
   const myNav = document.querySelector(".nav-scroll");
-  const navEle = document.querySelector(".nav-child");
   window.onscroll = function() {
     if (window.scrollY >= 100) {
       myNav.classList.add("nav-colored");
-      navEle.classList.add("nav-child-colored");
     } else {
       myNav.classList.remove("nav-colored");
-      navEle.classList.remove("nav-child-colored");
     }
   };
+
+  const burger = document.querySelector(".nav-burger");
+  window.onresize = function() {
+    if (window.innerWidth > 767) burger.classList.remove("b-active");
+  };
+};
+
+const burgerDropdown = e => {
+  if (e.classList.contains("b-active")) e.classList.toggle("menu-active");
+  else
+    setTimeout(() => {
+      e.classList.toggle("menu-active");
+    }, 800);
+
+  e.classList.toggle("b-active");
 };
 
 const NavBar = props => {
@@ -69,22 +81,35 @@ const NavBar = props => {
   }, []);
   const rendered = headings.map(heading => (
     <span key={heading.Heading} className="ctn">
-      <NavLink to={heading.Link} className={`itemNav ${heading.class}`}>
+      {/* <NavLink to={heading.Link} className={`itemNav ${heading.class}`}> */}
+      <NavLink to={heading.Link} className="itemNav">
         {heading.Heading}
       </NavLink>
     </span>
   ));
   return (
-    <nav id="nav" className="nav-scroll nav">
-      <div className="ui container">
-        <div className="nav-child">
-          <Link to="/" className="logo">
-            Company Company
-          </Link>
-          <span className="nav-list" style={{ color: "white" }}>
-            {rendered}
-            {renderLogin(props)}
-          </span>
+    <nav className="nav-scroll nav">
+      <div className="ui container nav-ctn">
+        <Link to="/" className="logo">
+          Company Company
+        </Link>
+        <div className="nav-list">
+          {rendered}
+          {renderLogin(props)}
+        </div>
+        <div
+          className="nav-burger"
+          onClick={e => burgerDropdown(e.currentTarget)}
+        >
+          <div id="burger-1"></div>
+          <div id="burger-2"></div>
+          <div id="burger-3"></div>
+          <div id="burger-dropdown">
+            <div id="burger-menu">
+              {rendered}
+              {renderLogin(props)}
+            </div>
+          </div>
         </div>
       </div>
     </nav>

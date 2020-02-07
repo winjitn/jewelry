@@ -1,32 +1,35 @@
 .head {
-  font-size: 40px;
+  font-size: 30px;
   color: #3a3532;
   margin-bottom: 50px;
+  font-weight: bolder;
 }
 
 .main {
-  padding-top: 200px;
-  margin-bottom: 400px;
+  padding-top: 160px;
 }
 
 .ctn {
-  height: 100vh;
+  margin-bottom: 60px;
 }
 
-.bg {
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC")
-    repeat 0 0;
+.subhead {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 30px;
 }
 
-.loginblob {
-  height: 600px;
-  width: 600px;
-  background-color: rgb(199, 199, 199);
-  position: absolute;
-  top: -10%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  border-radius: 50%;
-  z-index: 1;
-  opacity: 0.5;
+.subhead2 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.contactInfo {
+  margin-top: 60px;
+}
+
+@media only screen and (min-height: 1000px) {
+  .ctn {
+    height: 100vh;
+  }
 }

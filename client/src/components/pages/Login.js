@@ -5,15 +5,9 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { login } from "../../actions";
-import styles from "./Contact.module.css";
+import "./Login.css";
 
 class Login extends React.Component {
-  componentDidMount() {
-    this.props.load(false);
-  }
-  componentWillUnmount() {
-    this.props.load(true);
-  }
   errorLogin(e, btn) {
     e.reset();
     btn.classList.remove("loading");
@@ -21,9 +15,8 @@ class Login extends React.Component {
   }
   onSubmit(e) {
     e.preventDefault();
-    const children = e.target.childNodes;
-    const btn = children[2];
-    btn.classList.add("loading");
+    e.currentTarget.classList.add("loading");
+
     e.target.classList.remove("error");
     const loginData = `username=${
       document.getElementById("username").value
@@ -34,36 +27,35 @@ class Login extends React.Component {
       this.props.history,
       this.errorLogin,
       e.target,
-      btn
+      e.currentTarget
     );
   }
   render() {
     return (
-      <div className={`${styles.ctn} ${styles.bg}`}>
-        <div
-          className="ui container"
-          style={{
-            paddingTop: "150px"
-          }}
-        >
-          <Form
-            onSubmit={e => this.onSubmit(e)}
-            style={{
-              width: "20%",
-              margin: "auto",
-              zIndex: "2"
-            }}
-          >
-            <Form.Field>
-              <label>Username</label>
-              <input type="text" id="username" placeholder="username" />
-            </Form.Field>
-            <Form.Field>
-              <label>Password</label>
-              <input type="password" id="password" placeholder="password" />
-            </Form.Field>
-            <Button type="submit">Login</Button>
-            <div style={{ paddingTop: "20px" }}>
+      <div className="login-ctn">
+        <div className="ui container login-inner-ctn">
+          <Form onSubmit={e => this.onSubmit(e)} className="login-form">
+            <label className="login-label">Username</label>
+            <input
+              className="login-input"
+              type="text"
+              id="username"
+              placeholder="username"
+            />
+            <label className="login-label">Password</label>
+            <input
+              className="login-input"
+              type="password"
+              id="password"
+              placeholder="password"
+            />
+            <Button
+              className="fluid ui secondary button login-btn"
+              type="submit"
+            >
+              Login
+            </Button>
+            <div className="no-acc">
               <Link to="/contact">No account? Contact us</Link>
             </div>
             <div style={{ fontSize: "10px" }} className="ui error message">
@@ -71,7 +63,6 @@ class Login extends React.Component {
             </div>
           </Form>
         </div>
-        <div className={styles.loginblob}></div>
       </div>
     );
   }
