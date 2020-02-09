@@ -135,6 +135,7 @@ class Home extends React.Component {
       if (index <= 5) {
         return (
           <img
+            key={index}
             alt="wheel"
             className={`wheel-img ${index === n ? `l-active` : null}`}
             src={this.wheelArray[index].img}
@@ -144,12 +145,12 @@ class Home extends React.Component {
         );
       } else
         return (
-          <>
+          <React.Fragment key={index}>
             <div className="wheel-item-label letter-active">
               {this.wheelArray[n].tag}
             </div>
             <div className="wheel-item-label">{this.wheelArray[n].tag}</div>
-          </>
+          </React.Fragment>
         );
     });
   }
@@ -243,7 +244,7 @@ class Home extends React.Component {
           <div className="ui container">
             <div className="events-inner">
               {this.eventsArray.map(event => (
-                <div className="events-item">
+                <div key={event.title} className="events-item">
                   <img
                     className="events-img"
                     src={require(`../pics/${event.img}`)}

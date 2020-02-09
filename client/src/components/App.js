@@ -12,7 +12,6 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Feedback from "./pages/Feedback";
 import * as actions from "../actions";
-import { Feed } from "semantic-ui-react";
 
 class App extends React.Component {
   state = { loading: true };
