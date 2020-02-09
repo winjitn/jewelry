@@ -61,9 +61,9 @@
     margin: 60px auto 60px auto;
   }
 
-  * {
+  /* * {
     letter-spacing: -1px;
-  }
+  } */
 }
 
 @media only screen and (max-width: 600px) {
@@ -84,38 +84,43 @@
   }
 } */
 
-[item="bracelets"],
-[item="necklaces"],
+[item="pendants"],
+[item="earrings"],
 [item="bangles"],
-[item="rings"] {
+[item="rings"],
+[item="new"] {
   position: relative;
 }
 
-[item="bracelets"]::after,
-[item="necklaces"]::after,
+[item="pendants"]::after,
+[item="earrings"]::after,
 [item="bangles"]::after,
-[item="rings"]::after {
+[item="rings"]::after,
+[item="new"]::after {
   display: block;
   font-weight: 600;
   font-size: 12px;
 
   position: absolute;
-  bottom: 5%;
+  bottom: 4%;
   left: 50%;
   transform: translateX(-50%);
 }
 
-[item="bracelets"]::after {
-  content: "BRACELETS";
+[item="pendants"]::after {
+  content: "PENDANTS";
 }
-[item="necklaces"]::after {
-  content: "NECKLACES";
+[item="earrings"]::after {
+  content: "EARRINGS";
 }
 [item="bangles"]::after {
   content: "BANGLES";
 }
 [item="rings"]::after {
   content: "RINGS";
+}
+[item="new"]::after {
+  content: "NEW";
 }
 
 .carousel {
@@ -197,6 +202,7 @@ i.icon.chevron.left:before {
   transform: translateX(20%);
   transition: 0.5s ease-out;
   opacity: 0;
+  filter: blur(4px);
 }
 
 .l-disable {

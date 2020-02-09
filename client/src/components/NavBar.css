@@ -20,7 +20,7 @@
 .itemNav {
   background: linear-gradient(0deg, #24395b, #24395b) bottom left no-repeat;
   background-size: 0px 3px;
-  transition: 0.4s;
+  transition: background-size 0.4s;
   text-decoration: none;
   padding: 3px 0;
 }

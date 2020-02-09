@@ -8,6 +8,8 @@ import one from "../pics/1.jpg";
 import two from "../pics/2.jpg";
 import three from "../pics/3.jpg";
 import four from "../pics/4.jpg";
+import five from "../pics/5.jpg";
+import six from "../pics/6.jpg";
 
 import pc1 from "../pics/pc1.png";
 import pc2 from "../pics/pc2.png";
@@ -20,10 +22,10 @@ class Home extends React.Component {
   wheelArray = [
     { img: pc1, tag: "Heart" },
     { img: pc2, tag: "Ball" },
-    { img: pc3, tag: "Ring" },
-    { img: pc4, tag: "Chain" },
-    { img: pc5, tag: "Necklace" },
-    { img: pc6, tag: "Earring" }
+    { img: pc3, tag: "Crown" },
+    { img: pc4, tag: "Earring" },
+    { img: pc5, tag: "Bracelet" },
+    { img: pc6, tag: "Bead" }
   ];
   eventsArray = [
     {
@@ -95,19 +97,15 @@ class Home extends React.Component {
           labels[i].nextElementSibling === null
             ? labels[i].previousElementSibling
             : labels[i].nextElementSibling;
-        // const newItem =
-        //   items[i].previousElementSibling === null
-        //     ? items[i].nextElementSibling
-        //     : items[i].previousElementSibling;
 
         const next =
           (Number(items[i].getAttribute("current")) +
             (side === "left" ? 6 - displayN : displayN)) %
           6;
 
+        newLabel.innerHTML = this.wheelArray[next].tag;
         const newItem = items[i].parentElement.children[next];
-        // await newItem.setAttribute("src", this.wheelArray[next].img);
-        // newLabel.innerHTML = this.wheelArray[next].tag;
+
         setTimeout(() => {
           newLabel.classList.add("letter-active");
         }, 500);
@@ -183,23 +181,23 @@ class Home extends React.Component {
               </Grid.Column>
               <Grid.Column width={10}>
                 <Grid className="body-inner-ctn-wrapper">
-                  <Grid.Column item="bracelets" width={5}>
+                  <Grid.Column item="new" width={5}>
                     <Image src={one} />
                   </Grid.Column>
-                  <Grid.Column item="necklaces" width={5}>
-                    <Image src={two} />
+                  <Grid.Column item="earrings" width={5}>
+                    <Image src={six} />
                   </Grid.Column>
-                  <Grid.Column item="necklaces" width={5}>
-                    <Image src={two} />
+                  <Grid.Column item="rings" width={5}>
+                    <Image src={three} />
                   </Grid.Column>
                   <Grid.Column item="bangles" width={5}>
-                    <Image item="bangles" src={three} />
+                    <Image item="bangles" src={four} />
+                  </Grid.Column>
+                  <Grid.Column item="pendants" width={5}>
+                    <Image src={five} />
                   </Grid.Column>
                   <Grid.Column item="rings" width={5}>
-                    <Image src={four} />
-                  </Grid.Column>
-                  <Grid.Column item="rings" width={5}>
-                    <Image src={four} />
+                    <Image src={two} />
                   </Grid.Column>
                 </Grid>
               </Grid.Column>
@@ -224,64 +222,10 @@ class Home extends React.Component {
               </div>
               <div className="wheel-item wheel-res">
                 {this.wheelImgRender(0)}
-                {/* <img
-                  alt="wheel"
-                  className="wheel-img l-active"
-                  src={this.wheelArray[0].img}
-                  current={0}
-                  onAnimationEnd={e => this.wheelEnd(e.target)}
-                />
-                <img
-                  alt="wheel"
-                  className="wheel-img"
-                  src={this.wheelArray[0].img}
-                  onAnimationEnd={e => this.wheelEnd(e.target)}
-                />
-                <div className="wheel-item-label letter-active">
-                  {this.wheelArray[0].tag}
-                </div>
-                <div className="wheel-item-label">{this.wheelArray[0].tag}</div> */}
               </div>
-              <div className="wheel-item">
-                {this.wheelImgRender(1)}
-                {/* <img
-                  alt="wheel"
-                  className="wheel-img l-active"
-                  src={this.wheelArray[1].img}
-                  current={1}
-                  onAnimationEnd={e => this.wheelEnd(e.target)}
-                />
-                <img
-                  alt="wheel"
-                  className="wheel-img"
-                  src={this.wheelArray[0].img}
-                  onAnimationEnd={e => this.wheelEnd(e.target)}
-                />
-                <div className="wheel-item-label letter-active">
-                  {this.wheelArray[1].tag}
-                </div>
-                <div className="wheel-item-label">{this.wheelArray[1].tag}</div> */}
-              </div>
+              <div className="wheel-item">{this.wheelImgRender(1)}</div>
               <div className="wheel-item wheel-res">
                 {this.wheelImgRender(2)}
-
-                {/* <img
-                  alt="wheel"
-                  className="wheel-img l-active"
-                  src={this.wheelArray[2].img}
-                  current={2}
-                  onAnimationEnd={e => this.wheelEnd(e.target)}
-                />
-                <img
-                  alt="wheel"
-                  className="wheel-img"
-                  src={this.wheelArray[0].img}
-                  onAnimationEnd={e => this.wheelEnd(e.target)}
-                />
-                <div className="wheel-item-label letter-active">
-                  {this.wheelArray[2].tag}
-                </div>
-                <div className="wheel-item-label">{this.wheelArray[2].tag}</div> */}
               </div>
               <div className="wheel-nav">
                 <button
