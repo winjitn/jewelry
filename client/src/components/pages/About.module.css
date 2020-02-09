@@ -6,11 +6,11 @@
 }
 
 .aboutctn {
-  height: 720px;
   display: flex !important;
   align-content: center;
   flex-direction: column;
   justify-content: center;
+  padding: 180px 0;
 }
 
 .subhead {
@@ -29,7 +29,15 @@
 
 @media only screen and (max-width: 767px) {
   .aboutmainctn {
-    margin: 60px 0;
+    padding: 60px 0;
+  }
+
+  .aboutctn {
+    display: flex !important;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 0;
   }
 }
 

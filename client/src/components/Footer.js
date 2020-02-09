@@ -37,7 +37,7 @@ export const Footer = () => {
           </Grid>
         </div>
       </div>
-      <div id="copyright">©2020 Benson Jewelry. All Rights Reserved.</div>
+      <div id="copyright">©2020 Company Company. All Rights Reserved.</div>
     </div>
   );
 };

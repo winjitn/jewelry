@@ -111,8 +111,10 @@ class Home extends React.Component {
 
         newItem.setAttribute("current", next);
 
-        if (side === "left") newItem.classList.add("l-active");
-        else newItem.classList.add("r-active");
+        setTimeout(() => {
+          if (side === "left") newItem.classList.add("l-active");
+          else newItem.classList.add("r-active");
+        }, 10);
       }
     }
   }

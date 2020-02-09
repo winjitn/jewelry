@@ -61,7 +61,8 @@ const navScroll = () => {
 
   const burger = document.querySelector(".nav-burger");
   window.onresize = function() {
-    if (window.innerWidth > 767) burger.classList.remove("b-active");
+    if (window.innerWidth > 767)
+      burger.classList.remove("b-active", "menu-active");
   };
 };
 
@@ -70,7 +71,7 @@ const burgerDropdown = e => {
   else
     setTimeout(() => {
       e.classList.toggle("menu-active");
-    }, 800);
+    }, 600);
 
   e.classList.toggle("b-active");
 };
