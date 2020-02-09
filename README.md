@@ -4,5 +4,5 @@ Check out my [Portfolio](https://winjitn.github.io/portfolio).
 
 [Live site](https://jewelryproto.herokuapp.com/).
 
-Please note that the backend server is not launched due to sensitive information. 
+*<sub><sup>Please note that the backend server is not launched due to sensitive information.</sup></sub>
 
