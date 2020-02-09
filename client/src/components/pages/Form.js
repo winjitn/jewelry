@@ -83,13 +83,13 @@ class ContactForm extends React.Component {
       document.querySelector(".ui.form").classList.add("error");
       return;
     }
-    document.querySelector(".ui.button").classList.add("loading", "disabled");
+    document.querySelector(".contact-form").classList.add("loading");
     this.props.sendContactMail(this.state.form, this.props.history);
   }
 
   render() {
     return (
-      <Form onSubmit={() => this.onSubmit()}>
+      <Form className="contact-form" onSubmit={() => this.onSubmit()}>
         <Form.Group widths="equal">
           <Form.Field
             control={Input}

@@ -8,23 +8,21 @@ class Feedback extends React.Component {
 
     if (match.params.type === "form-submit") {
       return (
-        <div className="animate-bg">
-          <div className="holder">We will be in touch</div>
+        <div className="holder">
+          <span>We will be in touch</span>
         </div>
       );
     }
     if (match.params.type === "submit-error") {
       return (
-        <div className="animate-bg">
-          <div className="holder">
-            Something went wrong please try again later
-          </div>
+        <div className="holder">
+          <span>Something went wrong please try again later</span>
         </div>
       );
     }
     return (
-      <div className="animate-bg">
-        <div className="holder"> Looks like something went wrong</div>
+      <div className="holder">
+        <span>Looks like something went wrong :(</span>
       </div>
     );
   }
