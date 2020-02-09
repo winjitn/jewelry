@@ -73,6 +73,7 @@ class Home extends React.Component {
         ".wheel-img.l-active, .wheel-img.r-active"
       );
       const labels = document.querySelectorAll(".letter-active");
+
       const side = e.getAttribute("side");
 
       const displayN = window.innerWidth <= 767 ? 1 : 3;
@@ -94,27 +95,27 @@ class Home extends React.Component {
           labels[i].nextElementSibling === null
             ? labels[i].previousElementSibling
             : labels[i].nextElementSibling;
-        const newItem =
-          items[i].previousElementSibling === null
-            ? items[i].nextElementSibling
-            : items[i].previousElementSibling;
+        // const newItem =
+        //   items[i].previousElementSibling === null
+        //     ? items[i].nextElementSibling
+        //     : items[i].previousElementSibling;
 
         const next =
           (Number(items[i].getAttribute("current")) +
             (side === "left" ? 6 - displayN : displayN)) %
           6;
-        await newItem.setAttribute("src", this.wheelArray[next].img);
-        newLabel.innerHTML = this.wheelArray[next].tag;
+
+        const newItem = items[i].parentElement.children[next];
+        // await newItem.setAttribute("src", this.wheelArray[next].img);
+        // newLabel.innerHTML = this.wheelArray[next].tag;
         setTimeout(() => {
           newLabel.classList.add("letter-active");
         }, 500);
 
         newItem.setAttribute("current", next);
 
-        setTimeout(() => {
-          if (side === "left") newItem.classList.add("l-active");
-          else newItem.classList.add("r-active");
-        }, 10);
+        if (side === "left") newItem.classList.add("l-active");
+        else newItem.classList.add("r-active");
       }
     }
   }
@@ -129,6 +130,30 @@ class Home extends React.Component {
     if (this.loadedObj >= 16) {
       document.querySelector(".home-ctn").style.opacity = "1";
     }
+  }
+
+  wheelImgRender(n) {
+    return new Array(7).fill(0).map((value, index) => {
+      if (index <= 5) {
+        return (
+          <img
+            alt="wheel"
+            className={`wheel-img ${index === n ? `l-active` : null}`}
+            src={this.wheelArray[index].img}
+            current={index}
+            onAnimationEnd={e => this.wheelEnd(e.target)}
+          />
+        );
+      } else
+        return (
+          <>
+            <div className="wheel-item-label letter-active">
+              {this.wheelArray[n].tag}
+            </div>
+            <div className="wheel-item-label">{this.wheelArray[n].tag}</div>
+          </>
+        );
+    });
   }
 
   render() {
@@ -198,7 +223,8 @@ class Home extends React.Component {
                 </button>
               </div>
               <div className="wheel-item wheel-res">
-                <img
+                {this.wheelImgRender(0)}
+                {/* <img
                   alt="wheel"
                   className="wheel-img l-active"
                   src={this.wheelArray[0].img}
@@ -214,10 +240,11 @@ class Home extends React.Component {
                 <div className="wheel-item-label letter-active">
                   {this.wheelArray[0].tag}
                 </div>
-                <div className="wheel-item-label">{this.wheelArray[0].tag}</div>
+                <div className="wheel-item-label">{this.wheelArray[0].tag}</div> */}
               </div>
               <div className="wheel-item">
-                <img
+                {this.wheelImgRender(1)}
+                {/* <img
                   alt="wheel"
                   className="wheel-img l-active"
                   src={this.wheelArray[1].img}
@@ -233,10 +260,12 @@ class Home extends React.Component {
                 <div className="wheel-item-label letter-active">
                   {this.wheelArray[1].tag}
                 </div>
-                <div className="wheel-item-label">{this.wheelArray[1].tag}</div>
+                <div className="wheel-item-label">{this.wheelArray[1].tag}</div> */}
               </div>
               <div className="wheel-item wheel-res">
-                <img
+                {this.wheelImgRender(2)}
+
+                {/* <img
                   alt="wheel"
                   className="wheel-img l-active"
                   src={this.wheelArray[2].img}
@@ -252,7 +281,7 @@ class Home extends React.Component {
                 <div className="wheel-item-label letter-active">
                   {this.wheelArray[2].tag}
                 </div>
-                <div className="wheel-item-label">{this.wheelArray[2].tag}</div>
+                <div className="wheel-item-label">{this.wheelArray[2].tag}</div> */}
               </div>
               <div className="wheel-nav">
                 <button
