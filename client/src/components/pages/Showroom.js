@@ -64,6 +64,10 @@ class Showroom extends React.Component {
     return;
   }
 
+  componentDidUpdate() {
+    console.log(this.props.item);
+  }
+
   render() {
     return (
       <div className={styles.showroomctn}>
@@ -77,7 +81,10 @@ class Showroom extends React.Component {
                 <div>Necklaces</div>
               </div>
             </li>
-            <li onClick={this.props.onItemsSubmit}>Review</li>
+            <li onClick={this.props.onItemsSubmit}>
+              Review
+              <div className={styles.cartTally}>{this.props.item.length}</div>
+            </li>
           </ul>
         </div>
         <div className={styles.main}> {this.catalogue()} </div>

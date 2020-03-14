@@ -41,6 +41,7 @@ class Login extends React.Component {
               type="text"
               id="username"
               placeholder="username"
+              value="admin"
             />
             <label className="login-label">Password</label>
             <input
@@ -48,6 +49,7 @@ class Login extends React.Component {
               type="password"
               id="password"
               placeholder="password"
+              value="admin"
             />
             <Button
               className="fluid ui secondary button login-btn"

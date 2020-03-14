@@ -94,6 +94,7 @@
   line-height: 50px;
   font-weight: bold;
   cursor: pointer;
+  position: relative;
 }
 
 .dropdown {
@@ -136,4 +137,17 @@
 
 .dropdownContent div:hover {
   background-color: rgb(221, 221, 221);
+}
+
+.cartTally {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: -20px;
+  line-height: 20px;
+  text-align: center;
 }
