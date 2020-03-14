@@ -44,8 +44,8 @@ export const deleteItem = code => {
   return { type: DELETE_ITEM, payload: code };
 };
 
-export const clearItem = code => {
-  return { type: CLEAR_ITEM, payload: code };
+export const clearItem = () => {
+  return { type: CLEAR_ITEM, payload: [] };
 };
 
 export const sendContactMail = (content, history) => async dispatch => {

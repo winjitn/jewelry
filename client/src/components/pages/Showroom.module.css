@@ -1,8 +1,5 @@
 .main {
-  padding-top: 100px;
-  margin-left: 50px;
-  margin-right: 400px;
-  padding-bottom: 400px;
+  margin: 100px 0;
 }
 
 .subhead {
@@ -11,41 +8,132 @@
   margin-bottom: 30px;
 }
 
-.cart {
-  position: fixed;
-  top: 200px;
-  right: 100px;
-  width: 200px;
-  height: 300px;
-  border: solid 2px rgb(228, 228, 228);
-  border-radius: 10px;
+.imginfo {
+  position: absolute;
+  bottom: 5px;
+  font-size: 10px;
+  font-weight: bolder;
+  text-align: center;
+  width: 100%;
 }
 
-.cartbody {
-  padding: 20px;
+.imgwrapper {
+  position: relative;
+  width: 25%;
+  padding: 2px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.cartbodytext {
-  height: 60%;
-  overflow: auto;
+.imgwrapper img {
+  display: block;
+}
+
+.imgctn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.showroomctn {
+  margin: 0 8%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .imgwrapper {
+    width: 50%;
+  }
+}
+
+.ribbon {
+  display: none;
+  position: absolute;
+  transform: rotate(45deg) translate(32%, -180%);
+  transform-origin: center;
+  right: 0;
+  top: 0;
+  line-height: 180%;
+  width: 80%;
+
+  text-align: center;
+  font-size: 12px;
+  font-weight: bolder;
+  color: rgb(245, 245, 245);
+  background-color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .ribbon {
+    transform: rotate(45deg) translate(32%, -100%);
+  }
+}
+
+.plus {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+
+.productsBarWrapper {
+  margin-top: 150px;
+  height: 50px;
+  width: 100%;
+  box-shadow: 0 -10px 10px -10px rgb(228, 228, 228) inset;
+}
+
+.productsBarWrapper ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.productsBarWrapper ul li {
+  font-size: 12px;
+  line-height: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown::after {
+  display: inline-block;
+  content: "";
+  background-image: url("../../pics/caret.svg");
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(30%, -50%);
+  width: 10px;
+  height: 10px;
+}
+
+.dropdown:hover::after {
+  transform: translate(30%, -50%) rotate(180deg);
+}
+
+.dropdownContent {
+  position: absolute;
+  display: none;
+  transform: translateX(-25%);
+  width: 150px;
+  z-index: 1;
+  background-color: white;
+  box-shadow: 0 0 10px rgb(224, 224, 224);
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+.dropdownContent div {
   padding: 0 20px;
 }
 
-.cartbutton {
-  position: absolute;
-  width: 50%;
-  bottom: 0;
-}
-
-.imgcard {
-  position: absolute;
-  bottom: 15px;
-  left: 10px;
-  font-size: 10px;
-  font-weight: bolder;
-}
-
-#imgctn {
-  position: relative;
-  padding: 1.5px;
+.dropdownContent div:hover {
+  background-color: rgb(221, 221, 221);
 }

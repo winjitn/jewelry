@@ -35,7 +35,7 @@ class ShowroomReview extends React.Component {
   }
   render() {
     return (
-      <div className={`${styles.ctn} ${styles.bg}`}>
+      <div className={styles.bg}>
         <div className={`ui container ${styles.main}`}>
           <div className={styles.head}>Review</div>
           <Segment inverted>
